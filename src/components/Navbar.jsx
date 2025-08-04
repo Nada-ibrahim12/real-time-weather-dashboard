@@ -1,6 +1,7 @@
 import { style } from "framer-motion/client";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar.jsx";
 
 export class Navbar extends Component {
   render() {
@@ -11,15 +12,7 @@ export class Navbar extends Component {
             <div className="logo">
               <p className="m-0 ms-3">Weather</p>
             </div>
-            <div className="search-bar w-50">
-              <input
-                type="search"
-                id="search"
-                className="bg-white bg-opacity-25 border-0 rounded-5 shadow-effect w-75 p-2"
-                placeholder="Search for city"
-                aria-label="Search"
-              />
-            </div>
+            <SearchBar />
           </div>
         </div>
       </div>
