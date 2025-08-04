@@ -49,3 +49,21 @@ input::placeholder {
   font-family: "Arial", sans-serif;
   font-weight: 500;
 }
+
+input:focus {
+  outline: #051441;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(5, 20, 65, 0.5);
+}
+input {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #051441;
+  color: #091d5a;
+  font-family: "Arial", sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:hover {
+  border-color: #051441;
+  box-shadow: 0 0 0 2px rgba(5, 20, 65, 0.2);
+}

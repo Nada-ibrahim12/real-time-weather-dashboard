@@ -1,3 +1,4 @@
+import { style } from "framer-motion/client";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
