@@ -61,9 +61,270 @@ input:hover {
   box-shadow: 0 0 0 2px rgba(5, 20, 65, 0.2);
 }
 
-.wcard {
-  background-color: rgba(255, 255, 255, 0.250);
-  border-radius: 1rem;
-  padding: 1.5rem;
+
+.app-title {
+  color: #2c3e50;
+  font-weight: 700;
+  text-align: center;
 }
 
+.wcard {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.wcard:hover {
+  transform: translateY(-5px);
+}
+
+.shadow-effect {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.current-weather-card {
+  height: 100%;
+}
+
+.city-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.current-date {
+  color: #7f8c8d;
+}
+
+.weather-description {
+  color: #3498db;
+}
+
+.temperature-display {
+  margin-top: 1.5rem;
+}
+
+.current-temp {
+  color: #2c3e50;
+}
+
+/* Weather Details */
+.weather-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.detail-icon {
+  color: #3498db;
+}
+
+.detail-label {
+  margin-bottom: 0.2rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.detail-value {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Forecast Cards */
+.forecast-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.forecast-title {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.forecast-card {
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-day {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.forecast-date {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.weather-condition {
+  color: #3498db;
+}
+
+.temperature-range {
+  font-weight: 600;
+}
+
+.max-temp {
+  color: #e74c3c;
+}
+
+.min-temp {
+  color: #3498db;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .weather-details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .forecast-cards {
+    flex-direction: column;
+  }
+  
+  .forecast-card {
+    margin-bottom: 1rem;
+  }
+}
+/* Navbar Styles */
+.navbar {
+  transition: all 0.3s ease;
+  z-index: 1030;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.weather-icon {
+  transition: transform 0.3s ease;
+}
+
+.weather-icon:hover {
+  transform: rotate(15deg);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Search Bar Styles */
+.search-form {
+  transition: all 0.3s ease;
+}
+
+.search-form.focused {
+  transform: scale(1.02);
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.search-input {
+  padding-left: 2.5rem !important;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.search-input:focus {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25) !important;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8c8d;
+}
+
+.clear-btn {
+  color: #7f8c8d;
+  padding: 0.5rem;
+  right: 0.5rem;
+}
+
+.clear-btn:hover {
+  color: #e74c3c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand .logo {
+    font-size: 1.2rem !important;
+  }
+  
+  .search-input {
+    padding: 0.5rem 1rem 0.5rem 2.5rem !important;
+    font-size: 0.9rem;
+  }
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex: 1;
+  padding-top: 20px; 
+}
+
+.navbar-spacer {
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding-top: 60px;
+  }
+  
+  .navbar-spacer {
+    height: 60px;
+  }
+}
+
+.remove-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.remove-btn:hover {
+  opacity: 1;
+}
