@@ -83,7 +83,7 @@ input:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.current-weather-card {
+.wcard {
   height: 100%;
 }
 
@@ -186,20 +186,6 @@ input:hover {
   color: #3498db;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .weather-details-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .forecast-cards {
-    flex-direction: column;
-  }
-  
-  .forecast-card {
-    margin-bottom: 1rem;
-  }
-}
 /* Navbar Styles */
 .navbar {
   transition: all 0.3s ease;

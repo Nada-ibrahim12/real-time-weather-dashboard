@@ -42,7 +42,7 @@ class DayForecastCard extends Component {
         <h3 className="forecast-title mb-4">3-Day Forecast</h3>
         <div className="forecast-cards row g-3">
           {forecasts.map((day, index) => (
-            <div key={index} className="col-md-4">
+            <div key={index} className="col-md-4 col-sm-4">
               <div className="forecast-card p-3 rounded-3 h-100">
                 <h5 className="forecast-day">
                   {new Date(day.date).toLocaleDateString("en-US", {

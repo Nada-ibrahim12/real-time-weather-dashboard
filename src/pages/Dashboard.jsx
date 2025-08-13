@@ -3,12 +3,16 @@ import axios from "axios";
 import CurrentWeatherCard from "../components/CurrentWeatherCard";
 import WeatherDetails from "../components/WeatherDetails";
 import DayForecastCard from "../components/DayForecastCard";
+import { FiRefreshCw, FiX } from "react-icons/fi";
+
+
 
 const Dashboard = ({ cities, onRemoveCity }) => {
   const API_KEY = "c222aa796ed432a92e23429bf0c2a4db";
   const [weatherData, setWeatherData] = useState([]);
   const [forecastData, setForecastData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [activeCityIndex, setActiveCityIndex] = useState(0);
 
   useEffect(() => {
     const fetchAllData = async () => {
@@ -80,7 +84,7 @@ const Dashboard = ({ cities, onRemoveCity }) => {
     });
 
     return Object.values(daily)
-      .slice(1, 4) 
+      .slice(0, 3) 
       .map((day) => ({
         ...day,
         date: new Date(day.date),
@@ -151,27 +155,30 @@ const Dashboard = ({ cities, onRemoveCity }) => {
 
         <div className="row g-4">
           {weatherData.map((weather, index) => (
-            <div key={`${weather.name}-${index}`} className="col-md-6">
-              <div className="city-container shadow-lg mb-4 p-3 rounded-3 position-relative">
+            <div
+              key={`${weather.name}-${index}`}
+              className="col-md-12 col-lg-6 col-sm-12"
+            >
+              <div className="city-container shadow-lg mb-4 p-3 rounded-3 position-relative mt-md-5 mt-lg-0">
                 <button
                   className="btn btn-sm btn-danger position-absolute top-0 end-0 m-2"
                   onClick={() => onRemoveCity(index)}
                   title="Remove location"
                   style={{
-                    width: '28px',
-                    height: '28px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: '50%',
-                    zIndex: 1000
+                    width: "28px",
+                    height: "28px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "50%",
+                    zIndex: 1000,
                   }}
                 >
                   <i className="bi bi-x-lg"></i>
                 </button>
 
-                <div className="row g-3">
-                  <div className="col-lg-6">
+                <div className="row g-4">
+                  <div className="col-lg-6 col-md-6 d-md-flex">
                     <CurrentWeatherCard
                       city={weather.name}
                       temperature={weather.main.temp}
@@ -182,7 +189,7 @@ const Dashboard = ({ cities, onRemoveCity }) => {
                     />
                   </div>
 
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6 d-md-flex">
                     <WeatherDetails
                       windspeed={weather.wind.speed}
                       humidity={weather.main.humidity}
@@ -196,6 +203,12 @@ const Dashboard = ({ cities, onRemoveCity }) => {
                 <div className="mt-4">
                   <DayForecastCard forecasts={forecastData[index]} />
                 </div>
+              </div>
+              <div className="mt-4 text-end">
+                <small className="text-muted bg-light p-2 rounded-3">
+                  Last updated:{" "}
+                  {new Date(weather.dt * 1000).toLocaleTimeString()}
+                </small>
               </div>
             </div>
           ))}
