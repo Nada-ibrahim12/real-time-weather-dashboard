@@ -42,20 +42,46 @@ The app supports **search by city**, **geolocation-based weather retrieval**, an
 
 ```
 
+public/
+│── background1.jpg
+│── background2.jpg
+│── icon.svg
+│── index.html
+
 src/
-│── components/
+│── assets/                # Static assets like images, icons, etc.
+│
+│── components/            # Reusable UI components
 │   ├── Navbar.jsx
 │   ├── SearchBar.jsx
 │   ├── CurrentWeatherCard.jsx
 │   ├── WeatherDetails.jsx
 │   ├── DayForecastCard.jsx
 │
-│── pages/
+│── hooks/                 # Custom hooks
+│   ├── useGeoLocation.jsx
+│
+│── pages/                 # Page-level components
 │   ├── Dashboard.jsx
 │   ├── NotFound.jsx
 │
+│── services/              # API calls & external services
+│   ├── weatherAPI.jsx
+│
+│── utils/                 # Helper functions & dummy data
+│   ├── dummyData.js
+│
 │── App.jsx
-│── index.js
+│── App.css
+│── index.css
+│── main.jsx
+│
+.env
+.eslintrc.js
+.gitignore
+package.json
+package-lock.json
+README.md
 
 ````
 
@@ -139,6 +165,3 @@ Weather data is fetched from **OpenWeather**:
 
 
 ---
-
-If you’d like, I can also make a **GitHub-ready version with screenshots and a live demo badge** so it looks polished when someone visits your repo. That will make it stand out immediately.
-```
