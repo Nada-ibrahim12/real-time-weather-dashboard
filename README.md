@@ -1,71 +1,78 @@
+---
+
 # 🌤️ Real-Time Weather Dashboard
 
-**Real-Time Weather Dashboard** is a modern, responsive weather application built with **React 19** and **Vite**.  
-It allows users to view **real-time weather conditions** and a **3-day forecast** for multiple cities, using the [OpenWeather API](https://openweathermap.org/api).  
+**Real-Time Weather Dashboard** is a modern, responsive weather application built with **React 19** and **Vite**.
+It allows users to view **real-time weather conditions** and a **3-day forecast** for multiple cities, using the [OpenWeather API](https://openweathermap.org/api).
 The app supports **search by city**, **geolocation-based weather retrieval**, and **persistent data storage** using **Local Storage**.
 
 ---
 
 ## 🚀 Features
 
-- **Real-Time Weather Data** – Live temperature, condition, humidity, pressure, wind speed, and sunrise/sunset.
-- **3-Day Forecast** – Displays upcoming weather trends.
-- **Search by City** – Quickly add cities by name.
-- **My Location Support** – Detect and display your current location's weather.
-- **City Management** – Add or remove cities from the dashboard.
-- **Local Storage Persistence** – Cities remain saved even after a page refresh.
-- **Responsive** – Mobile-friendly design.
+* **Real-Time Weather Data** – Live temperature, condition, humidity, pressure, wind speed, and sunrise/sunset.
+* **3-Day Forecast** – Displays upcoming weather trends.
+* **Search by City** – Quickly add cities by name.
+* **My Location Support** – Detect and display your current location's weather.
+* **City Management** – Add or remove cities from the dashboard.
+* **Local Storage Persistence** – Cities remain saved even after a page refresh.
+* **Responsive** – Mobile-friendly design.
 
 ---
 
 ## 🛠️ Tech Stack
 
 **Core:**
-- React 19  
-- React Router DOM 7  
-- Axios  
-- Vite
+
+* React 19
+* React Router DOM 7
+* Axios
+* Vite
 
 **Styling & UI:**
-- Bootstrap 5  
-- React Bootstrap  
-- FontAwesome Icons  
-- React Icons  
+
+* Bootstrap 5
+* React Bootstrap
+* FontAwesome Icons
+* React Icons
 
 **Development Tools:**
-- ESLint (with React Hooks plugin)  
-- Dotenv for environment variables
+
+* ESLint (with React Hooks plugin)
+* Dotenv for environment variables
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
 public/
 │── background1.jpg
 │── background2.jpg
+│── icon.svg
+│── index.html
+
 src/
-│── assets/                
+│── assets/                  
 │
-│── components/           
+│── components/              
 │   ├── Navbar.jsx
 │   ├── SearchBar.jsx
 │   ├── CurrentWeatherCard.jsx
 │   ├── WeatherDetails.jsx
 │   ├── DayForecastCard.jsx
 │
-│── hooks/                 # Custom hooks
+│── hooks/                   # Custom hooks
 │   ├── useGeoLocation.jsx
 │
-│── pages/                 
+│── pages/                   
 │   ├── Dashboard.jsx
 │   ├── NotFound.jsx
 │
-│── services/             
+│── services/               
 │   ├── weatherAPI.jsx
 │
-│── utils/                
+│── utils/                   
 │   ├── dummyData.js
 │
 │── App.jsx
@@ -79,18 +86,18 @@ src/
 package.json
 package-lock.json
 README.md
-
-````
+```
 
 ---
 
 ## 📦 Installation & Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Nada-ibrahim12/real-time-weather-dashboard
    cd real-time-weather-dashboard
-````
+   ```
 
 2. **Install dependencies**
 
@@ -132,9 +139,15 @@ README.md
 Weather data is fetched from **OpenWeather**:
 
 * **Current Weather:**
-  `https://api.openweathermap.org/data/2.5/weather`
+
+  ```
+  https://api.openweathermap.org/data/2.5/weather
+  ```
 * **3-Day Forecast:**
-  `https://api.openweathermap.org/data/2.5/forecast`
+
+  ```
+  https://api.openweathermap.org/data/2.5/forecast
+  ```
 
 **Query Parameters:**
 
@@ -160,5 +173,5 @@ Weather data is fetched from **OpenWeather**:
 * 📅 7-day extended forecast
 * 🌐 Multi-language support
 
-
 ---
+
