@@ -45,13 +45,10 @@ The app supports **search by city**, **geolocation-based weather retrieval**, an
 public/
 │── background1.jpg
 │── background2.jpg
-│── icon.svg
-│── index.html
-
 src/
-│── assets/                # Static assets like images, icons, etc.
+│── assets/                
 │
-│── components/            # Reusable UI components
+│── components/           
 │   ├── Navbar.jsx
 │   ├── SearchBar.jsx
 │   ├── CurrentWeatherCard.jsx
@@ -61,14 +58,14 @@ src/
 │── hooks/                 # Custom hooks
 │   ├── useGeoLocation.jsx
 │
-│── pages/                 # Page-level components
+│── pages/                 
 │   ├── Dashboard.jsx
 │   ├── NotFound.jsx
 │
-│── services/              # API calls & external services
+│── services/             
 │   ├── weatherAPI.jsx
 │
-│── utils/                 # Helper functions & dummy data
+│── utils/                
 │   ├── dummyData.js
 │
 │── App.jsx
